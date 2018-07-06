@@ -6,12 +6,6 @@ fileRead = open('plantNames.csv')
 
 for i in fileRead:
 	i = i.strip()
-	name = i.split(' ')
-	s = name[0]
-	if len(name)>2:
-		s = s+" "+name[1]
-		i=s
-	i = i+" medicinal plant"
 	plants.append(i)
 
 response = gid.googleimagesdownload()
