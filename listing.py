@@ -1,5 +1,5 @@
 import os
-
+import platform
 folder_names=[] #generating empty list that contains list of all the names of folders.
 
 #All images are in downloads/SUBDIRECTORY.
@@ -7,7 +7,10 @@ folder_names=[] #generating empty list that contains list of all the names of fo
 #folder to get file names.
 for x in os.listdir('downloads'):
 	folder_names.append(x)
-	directory = 'downloads/'+x #verify for windows operating systems
+	if platform.system()=='Windows':   #verify for windows operating systems
+		directory = 'downloads\'+x 
+	else:	
+		directory = 'downloads/'+x 
 	file_names=[] #generating empty list of file names of each subdirectory on every iteration.
 	for y in os.listdir(directory):
 		file_names.append(y)
